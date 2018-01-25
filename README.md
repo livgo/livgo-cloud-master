@@ -22,8 +22,7 @@ Spring Cloud Framework
     13.sys-boot-admin: 系统监控
     14.sys-hystrix-monitor: 服务断路监控仪表
     15.sys-sleuth-zipkin: 日志追踪
-    16.test: 测试脚本（可选）
-    16.tools: 系统工具（可选）
+   
     
     
 联系人QQ：2212265563
