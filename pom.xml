@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <name>${artifactId}</name>
+    <groupId>com.livgo</groupId>
+    <artifactId>livgo-cloud-master</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <modules>
+        <module>livgo-cloud-common</module>
+        <module>livgo-cloud-core</module>
+        <module>livgo-cloud-eureka-server</module>
+        <module>livgo-cloud-config</module>
+        <module>livgo-cloud-config-server</module>
+        <module>livgo-cloud-sys-hystrix-monitor</module>
+        <module>livgo-cloud-sys-sleuth-zipkin</module>
+        <module>livgo-cloud-sys-boot-admin</module>
+        <module>livgo-cloud-job</module>
+        <module>livgo-cloud-service-demo</module>
+        <module>livgo-cloud-service-demo-facade</module>
+        <module>livgo-cloud-admin-demo</module>
+        <module>livgo-cloud-api-demo</module>
+        <module>livgo-cloud-gateway-demo</module>
+
+
+
+    </modules>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.8.RELEASE</version>
+
+    </parent>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+        <version.spring.boot.admin>1.5.5</version.spring.boot.admin>
+        <version.config>1.0.0-SNAPSHOT</version.config>
+        <version.core>1.0.0-SNAPSHOT</version.core>
+        <version.common>1.0.0-SNAPSHOT</version.common>
+        <version.test>1.0.0-SNAPSHOT</version.test>
+        <version.tools>1.0.0-SNAPSHOT</version.tools>
+        <version.service.facade>1.0.0-SNAPSHOT</version.service.facade>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <!--<dependency>-->
+        <!--<groupId>com.alibaba</groupId>-->
+        <!--<artifactId>fastjson</artifactId>-->
+        <!--<version>1.2.40</version>-->
+        <!--</dependency>-->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Dalston.SR4</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
