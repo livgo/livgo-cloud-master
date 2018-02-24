@@ -5,6 +5,9 @@ Spring Cloud Framework
     此框架为Spring Cloud的简易基础版，主要涉及结构定义，组件构成，流程规范，基础功能，Demo示例，
     本项目还会持续更新！
     
+    开源学习，不可用于商业用途！违者必究！
+    欢迎多交流！
+    
 结构说明：
 
     1.livgo-cloud：项目名
