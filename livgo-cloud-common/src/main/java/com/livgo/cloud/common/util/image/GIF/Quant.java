@@ -4,17 +4,17 @@ public class Quant {
     protected final static int netsize = 256; /* number of colours used */
 
     /* four primes near 500 - assume no image has a length so large */
-	/* that it is divisible by all four primes */
+    /* that it is divisible by all four primes */
     protected final static int prime1 = 499;
     protected final static int prime2 = 491;
     protected final static int prime3 = 487;
     protected final static int prime4 = 503;
 
     protected final static int minpicturebytes = (3 * prime4);
-	/* minimum size for input image */
+    /* minimum size for input image */
 
 	/* Program Skeleton
-	   ----------------
+       ----------------
 	   [select samplefac in range 1..30]
 	   [read image from input file]
 	   pic = (unsigned char*) malloc(3*width*height);
@@ -313,6 +313,7 @@ public class Quant {
         }
         return (best);
     }
+
     public byte[] process() {
         learn();
         unbiasnet();

@@ -16,9 +16,9 @@ import org.springframework.context.annotation.ComponentScan;
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-@EnableFeignClients(basePackages={"com.livgo.cloud.service.*.api"})
+@EnableFeignClients(basePackages = {"com.livgo.cloud.service.*.api"})
 @EnableHystrix
-@ComponentScan(basePackages={"com.livgo.cloud"})
+@ComponentScan(basePackages = {"com.livgo.cloud"})
 public class ApplicationAdminDemo {
     public static void main(String[] args) {
         SpringApplication.run(ApplicationAdminDemo.class, args);

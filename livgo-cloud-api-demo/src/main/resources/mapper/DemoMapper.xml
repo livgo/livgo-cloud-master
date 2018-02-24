@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.livgo.cloud.api.demo.mapper.DemoMapper">
+    <resultMap id="BaseResultMap" type="com.livgo.cloud.api.demo.model.entity.Demo">
+        <id column="id" jdbcType="VARCHAR" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="age" jdbcType="INTEGER" property="age"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, name, age
+    </sql>
+
+    <select id="selectCount" resultType="java.lang.Integer">
+        select
+        count(*)
+        from t_demo where 1
+    </select>
+
+    <select id="selectByPage" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_demo where 1 order by age
+    </select>
+
+    <select id="selectByLimit" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_demo where 1 order by age limit ${limit}
+    </select>
+</mapper>

@@ -3,38 +3,12 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <name>${artifactId}</name>
     <groupId>com.livgo</groupId>
     <artifactId>livgo-cloud-master</artifactId>
+    <name>${artifactId}</name>
     <packaging>pom</packaging>
     <version>1.0.0-SNAPSHOT</version>
 
-    <modules>
-        <module>livgo-cloud-common</module>
-        <module>livgo-cloud-core</module>
-        <module>livgo-cloud-eureka-server</module>
-        <module>livgo-cloud-config</module>
-        <module>livgo-cloud-config-server</module>
-        <module>livgo-cloud-sys-hystrix-monitor</module>
-        <module>livgo-cloud-sys-sleuth-zipkin</module>
-        <module>livgo-cloud-sys-boot-admin</module>
-        <module>livgo-cloud-job</module>
-        <module>livgo-cloud-service-demo</module>
-        <module>livgo-cloud-service-demo-facade</module>
-        <module>livgo-cloud-admin-demo</module>
-        <module>livgo-cloud-api-demo</module>
-        <module>livgo-cloud-gateway-demo</module>
-
-
-
-    </modules>
-
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.8.RELEASE</version>
-
-    </parent>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -43,46 +17,100 @@
         <version.config>1.0.0-SNAPSHOT</version.config>
         <version.core>1.0.0-SNAPSHOT</version.core>
         <version.common>1.0.0-SNAPSHOT</version.common>
+        <version.data>1.0.0-SNAPSHOT</version.data>
         <version.test>1.0.0-SNAPSHOT</version.test>
         <version.tools>1.0.0-SNAPSHOT</version.tools>
         <version.service.facade>1.0.0-SNAPSHOT</version.service.facade>
+        <version.log4j>1.7.21</version.log4j>
+        <version.swagger>2.7.0</version.swagger>
+        <version.swagger2markup>1.3.1</version.swagger2markup>
+        <version.commons-lang>2.6</version.commons-lang>
+        <version.commons-lang3>3.7</version.commons-lang3>
+        <version.druid>1.1.6</version.druid>
+        <version.mybatis-spring-boot>1.3.1</version.mybatis-spring-boot>
+        <version.pagehelper>4.2.1</version.pagehelper>
+        <version.pagehelper-spring-boot>1.2.3</version.pagehelper-spring-boot>
+        <version.logstash-logback-encoder>4.11</version.logstash-logback-encoder>
     </properties>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.9.RELEASE</version>
+        <relativePath></relativePath>
+    </parent>
+
+
     <dependencies>
-
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <scope>provided</scope>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-commons</artifactId>
         </dependency>
         <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <!--<dependency>-->
-        <!--<groupId>com.alibaba</groupId>-->
-        <!--<artifactId>fastjson</artifactId>-->
-        <!--<version>1.2.40</version>-->
-        <!--</dependency>-->
-        <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-context</artifactId>
         </dependency>
         <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-core</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.jolokia</groupId>
+            <artifactId>jolokia-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>net.logstash.logback</groupId>
+            <artifactId>logstash-logback-encoder</artifactId>
+            <version>${version.logstash-logback-encoder}</version>
+        </dependency>
+
+        <!--<dependency>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-starter-aop</artifactId>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-starter-data-redis</artifactId>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-starter-test</artifactId>-->
+        <!--<scope>test</scope>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-starter-freemarker</artifactId>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>org.mybatis.spring.boot</groupId>-->
+        <!--<artifactId>mybatis-spring-boot-starter</artifactId>-->
+        <!--<version>1.3.1</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>mysql</groupId>-->
+        <!--<artifactId>mysql-connector-java</artifactId>-->
+        <!--<scope>runtime</scope>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>com.alibaba</groupId>-->
+        <!--<artifactId>druid</artifactId>-->
+        <!--<version>${version.druid}</version>-->
+        <!--</dependency>-->
+        <!---->
 
     </dependencies>
     <dependencyManagement>
@@ -94,17 +122,104 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>commons-lang</groupId>
+                <artifactId>commons-lang</artifactId>
+                <version>${version.commons-lang}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${version.commons-lang3}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
+    <repositories>
+        <repository>
+            <id>alimaven</id>
+            <name>aliyun maven</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>jboss-maven2-release-repository</id>
+            <name>jboss maven</name>
+            <url>http://repository.jboss.org/maven2/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>central</id>
+            <name>central</name>
+            <url>http://repo1.maven.org/maven2</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
     <build>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
         <plugins>
+            <!--<plugin>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-maven-plugin</artifactId>-->
+            <!--<executions>-->
+            <!--<execution>-->
+            <!--<goals>-->
+            <!--<goal>repackage</goal>-->
+            <!--</goals>-->
+            <!--</execution>-->
+            <!--</executions>-->
+            <!--</plugin>-->
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
             </plugin>
         </plugins>
     </build>
 
+    <modules>
+        <module>livgo-cloud-common</module>
+        <module>livgo-cloud-core</module>
+        <module>livgo-cloud-data</module>
+        <module>livgo-cloud-eureka-server1</module>
+        <module>livgo-cloud-eureka-server2</module>
+        <module>livgo-cloud-eureka-server3</module>
+        <module>livgo-cloud-config</module>
+        <module>livgo-cloud-config-server</module>
+        <!--<module>livgo-cloud-sys-hystrix-monitor</module>-->
+        <!--<module>livgo-cloud-sys-log-trace</module>-->
+        <module>livgo-cloud-sys-boot-admin</module>
+        <module>livgo-cloud-job</module>
+        <module>livgo-cloud-service-demo</module>
+        <module>livgo-cloud-service-demo-facade</module>
+        <module>livgo-cloud-admin-demo</module>
+        <module>livgo-cloud-api-demo</module>
+        <module>livgo-cloud-gateway-demo</module>
+
+    </modules>
 </project>

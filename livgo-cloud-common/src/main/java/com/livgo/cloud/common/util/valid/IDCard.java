@@ -1,7 +1,6 @@
 package com.livgo.cloud.common.util.valid;
 
 import com.livgo.cloud.common.util.log.LogUtil;
-import com.livgo.cloud.common.util.upload.UploadUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

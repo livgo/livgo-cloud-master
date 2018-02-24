@@ -1,7 +1,7 @@
 package com.livgo.cloud.service.demo.api.consumer;
 
-import com.livgo.cloud.common.util.log.LogUtil;
 import com.livgo.cloud.common.model.bean.ResultBean;
+import com.livgo.cloud.common.util.log.LogUtil;
 import feign.hystrix.FallbackFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,7 +24,12 @@ public class Demo2ConsumerFallbackFactory implements FallbackFactory<Demo2Consum
         return new Demo2Consumer() {
 
             @Override
-            public ResultBean hello(String name) {
+            public ResultBean hello1(String name) {
+                return ResultBean.FAIL(throwable.getMessage());
+            }
+
+            @Override
+            public ResultBean hello2(String name) {
                 return ResultBean.FAIL(throwable.getMessage());
             }
         };

@@ -16,7 +16,7 @@ public class TipUtilTest {
         long beginTime = DateUtil.getCurTimeMillis();
         System.out.println(TipUtil.get("tip.demo.key"));
         long endTime = DateUtil.getCurTimeMillis();
-        System.out.println("耗时："+(endTime - beginTime));
+        System.out.println("耗时：" + (endTime - beginTime));
     }
 
 }

@@ -4,7 +4,6 @@ import com.livgo.cloud.common.Const;
 import com.livgo.cloud.common.util.file.FileUtil;
 import com.livgo.cloud.common.util.lang.UUIDUtil;
 import com.livgo.cloud.common.util.pk.PKUtil;
-import com.livgo.cloud.common.util.prop.PropUtil;
 import com.livgo.cloud.common.util.sys.SysUtil;
 import com.livgo.cloud.common.util.valid.ValidUtil;
 import org.slf4j.Logger;

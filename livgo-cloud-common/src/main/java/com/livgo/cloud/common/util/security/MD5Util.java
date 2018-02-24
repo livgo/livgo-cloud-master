@@ -149,9 +149,4 @@ public final class MD5Util {
         return getMD5("NODECODE=21; USERCODE=" + uname + "; PASSWORD=" + password + ";").toUpperCase();
     }
 
-
-    public static void main(String args[]) {
-
-
-    }
 }

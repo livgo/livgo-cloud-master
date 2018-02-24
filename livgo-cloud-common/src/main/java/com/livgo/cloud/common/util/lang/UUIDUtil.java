@@ -84,8 +84,5 @@ public final class UUIDUtil {
         return get32UUID().substring(0, n);
     }
 
-    public static void main(String[] args) {
-        System.out.println(getNumUUID(0));
-    }
 
 }

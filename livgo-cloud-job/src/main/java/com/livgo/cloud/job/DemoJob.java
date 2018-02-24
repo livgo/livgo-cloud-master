@@ -15,12 +15,12 @@ public class DemoJob {
 
 
     @Scheduled(fixedRate = 1000)
-    public void job1(){
+    public void job1() {
         System.out.println("Job1 每秒执行一次");
     }
 
-    @Scheduled(cron="0/5 * *  * * ? ")
-    public void job2(){
+    @Scheduled(cron = "0/5 * *  * * ? ")
+    public void job2() {
         try {
             Thread.sleep(4000);
         } catch (InterruptedException e) {

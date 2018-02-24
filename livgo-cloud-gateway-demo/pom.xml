@@ -10,8 +10,14 @@
     <modelVersion>4.0.0</modelVersion>
     <name>${artifactId}</name>
     <artifactId>livgo-cloud-gateway-demo</artifactId>
+    <packaging>war</packaging>
 
     <dependencies>
+        <dependency>
+            <groupId>com.livgo</groupId>
+            <artifactId>livgo-cloud-config</artifactId>
+            <version>${version.config}</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-zuul</artifactId>
@@ -20,6 +26,5 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka</artifactId>
         </dependency>
-     
     </dependencies>
 </project>

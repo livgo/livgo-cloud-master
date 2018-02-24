@@ -37,11 +37,4 @@ public final class NumberUtil {
         return Double.valueOf(new DecimalFormat("#." + FixdUtil.appendZero(scale)).format(d));
     }
 
-
-
-    public static void main(String[] args) {
-        System.out.println(halfUp(-1.06, 1));
-        System.out.println(halfDown(1.045, 2));
-    }
-
 }

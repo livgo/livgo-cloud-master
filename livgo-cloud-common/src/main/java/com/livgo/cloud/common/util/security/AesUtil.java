@@ -1,7 +1,5 @@
 package com.livgo.cloud.common.util.security;
 
-import com.livgo.cloud.common.util.file.FileEncodingUtil;
-import com.livgo.cloud.common.util.log.LogUtil;
 import com.livgo.cloud.common.util.valid.ValidUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -153,7 +151,7 @@ public final class AesUtil {
         return new BASE64Encoder().encode(bytes);
     }
 
-    public static String decrypt(String key,String str) throws Exception {
+    public static String decrypt(String key, String str) throws Exception {
         if (ValidUtil.isEmpty(str)) return null;
         if (ValidUtil.isEmpty(key)) key = DEFAULT_KEY;
         Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
@@ -163,24 +161,24 @@ public final class AesUtil {
         return new String(bytes, "utf-8");
     }
 
-    /*
-     * 示例
-     */
-    public static void main(String[] args) {
-        String srcString = "eerr3434";
-        try {
-            //加密
-            String encryptedString1 = encrypt(null, srcString);
-            System.out.println(encryptedString1);
-            String encryptedString2 = encrypt1(null, srcString);
-            System.out.println(encryptedString2);
-            String decryptedString1 = decrypt(null,encryptedString1);
-            System.out.println(decryptedString1);
-            //解密
-//            String decryptedString = decrypt(null,"P7M6JIu0akLHOjEbC/QmAgsWG8oHqy2MI2FbjfDV4o0XvvjV4kr0nvDxoQOoF/PmfutOyLTqeVwCBbDL5enj1UGs6PyLwIUPS99VWf8nXdMYziw0fq2qpvN0ZZW3jn0tYqLIjb4w51N6C/1dSuatlk7FebKByzicHAv6rqzUcN9yDy9nITdgOXdfVmQaLSUrQ0sPPiX1eJEUYC7xuOK1ZrImg5AXizXuehTdYcYz8CeYHLY3KMgqlM1nI0SizLDBiQntMeOuAj2gG2OcChEdwhaBPKip66e2Fn1IKsX0xzdNyhbE2OfGHkq0bhBmgiuSVosxVjxh57ZY15s7L11jFIFom8ioTdNUYCKTTD8s6Jj1w8vEZPERKopCNdSDZvCAvUZsiFyoTXbn5lzKcdvzhgx0hFih2E2xkiw=");
-//            System.out.println(decryptedString);
-        } catch (Exception e) {
-            LogUtil.error(logger, e);
-        }
-    }
+//    /*
+//     * 示例
+//     */
+//    public static void main(String[] args) {
+//        String srcString = "eerr3434";
+//        try {
+//            //加密
+//            String encryptedString1 = encrypt(null, srcString);
+//            System.out.println(encryptedString1);
+//            String encryptedString2 = encrypt1(null, srcString);
+//            System.out.println(encryptedString2);
+//            String decryptedString1 = decrypt(null,encryptedString1);
+//            System.out.println(decryptedString1);
+//            //解密
+////            String decryptedString = decrypt(null,"P7M6JIu0akLHOjEbC/QmAgsWG8oHqy2MI2FbjfDV4o0XvvjV4kr0nvDxoQOoF/PmfutOyLTqeVwCBbDL5enj1UGs6PyLwIUPS99VWf8nXdMYziw0fq2qpvN0ZZW3jn0tYqLIjb4w51N6C/1dSuatlk7FebKByzicHAv6rqzUcN9yDy9nITdgOXdfVmQaLSUrQ0sPPiX1eJEUYC7xuOK1ZrImg5AXizXuehTdYcYz8CeYHLY3KMgqlM1nI0SizLDBiQntMeOuAj2gG2OcChEdwhaBPKip66e2Fn1IKsX0xzdNyhbE2OfGHkq0bhBmgiuSVosxVjxh57ZY15s7L11jFIFom8ioTdNUYCKTTD8s6Jj1w8vEZPERKopCNdSDZvCAvUZsiFyoTXbn5lzKcdvzhgx0hFih2E2xkiw=");
+////            System.out.println(decryptedString);
+//        } catch (Exception e) {
+//            LogUtil.error(logger, e);
+//        }
+//    }
 }

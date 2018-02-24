@@ -170,6 +170,7 @@ public final class DateUtil {
     public static String format(String format) {
         return getSdf(format).format(new Date());
     }
+
     /**
      * 获取指定日期的截止时间
      *

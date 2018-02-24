@@ -1,6 +1,5 @@
 package com.livgo.cloud.common.model.bean;
 
-import com.livgo.cloud.common.Const;
 import com.livgo.cloud.common.model.em.ResponseCodeEnum;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -44,7 +43,7 @@ public class ResponseBean implements Serializable {
      * @return
      */
     public static ResponseBean FAIL() {
-        return new ResponseBean(ResponseCodeEnum.FAIL.getVal(), ResponseCodeEnum.FAIL.getDesp(), "","", null);
+        return new ResponseBean(ResponseCodeEnum.FAIL.getVal(), ResponseCodeEnum.FAIL.getDesp(), "", "", null);
     }
 
     //TODO 持续增加

@@ -1,5 +1,7 @@
 package com.livgo.cloud.api.demo;
 
+import com.livgo.cloud.core.swagger.EnableSwagger;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -16,9 +18,11 @@ import org.springframework.context.annotation.ComponentScan;
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-@EnableFeignClients(basePackages={"com.livgo.cloud.service.*.api"})
+@EnableFeignClients(basePackages = {"com.livgo.cloud.service.*.api"})
 @EnableHystrix
-@ComponentScan(basePackages={"com.livgo.cloud"})
+@ComponentScan(basePackages = {"com.livgo.cloud"})
+@MapperScan("com.livgo.cloud.**.mapper")
+@EnableSwagger
 public class ApplicationApiDemo {
     public static void main(String[] args) {
         SpringApplication.run(ApplicationApiDemo.class, args);

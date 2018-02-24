@@ -16,15 +16,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Component
 @FeignClient(name = "service-demo", fallbackFactory = Demo1ConsumerFallbackFactory.class)
-@RequestMapping("service-demo-demo1")
+//@RequestMapping("service-demo-demo1")//请求header里有Accept时会报404，建议此requestmapping写在方法上即可
 public interface Demo1Consumer {
 
-//    @RequestLine("GET /hi/{name}")
-    @RequestMapping(value = "hi/{name}", method = RequestMethod.GET)
-    public ResultBean hi(@PathVariable("name") String name);
-
-//    @HystrixCommand(fallbackMethod = "")
-//    @HystrixProperty
-    @RequestMapping(value = "hi1/{name}", method = RequestMethod.GET)
+    //    @RequestLine("GET /hi/{name}")
+    @RequestMapping(value = "service-demo-demo1/hi1/{name}", method = RequestMethod.GET)
     public ResultBean hi1(@PathVariable("name") String name);
+
+    @RequestMapping(value = "service-demo-demo1/hi2/{name}", method = RequestMethod.GET)
+    public ResultBean hi2(@PathVariable("name") String name);
 }
