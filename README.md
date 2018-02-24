@@ -29,3 +29,10 @@ Spring Cloud Framework
     1.启动顺序，eureka > config-server > 各应用
     2.各module包含使用说明，请仔细了解
     3.Swagger地址：各项目域名端口+/swagger-ui.html
+    
+    
+软件安装： 
+    
+    1.安装mysql, rabbitmq, redis
+    2.各配置端口密码等信息可在config-server里查看与对照
+    3.可视化页面在监控平台sys-boot-admin

@@ -12,11 +12,11 @@
     <artifactId>livgo-cloud-eureka-server3</artifactId>
 
     <dependencies>
-        <dependency>
-            <groupId>com.livgo</groupId>
-            <artifactId>livgo-cloud-config</artifactId>
-            <version>${version.config}</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.livgo</groupId>-->
+            <!--<artifactId>livgo-cloud-config</artifactId>-->
+            <!--<version>${version.config}</version>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka-server</artifactId>
