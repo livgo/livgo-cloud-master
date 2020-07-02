@@ -2,10 +2,10 @@ Spring Cloud Framework
 
 框架简介：
 
-    此框架为Spring Cloud的简易基础版，主要涉及结构定义，组件构成，流程规范，基础功能，Demo示例，
-    本项目还会持续更新！
+    此框架为Spring Cloud的简易基础版，主要涉及结构定义，组件构成，流程规范，基础功能，Demo示例
+   
     
-    开源学习，不可用于商业用途！违者必究！
+    开源学习，不可用于商业用途！
     欢迎多交流！
     
 结构说明：
@@ -24,13 +24,13 @@ Spring Cloud Framework
     12.service-xxx-facade: 微服务接口
     13.sys-boot-admin: 监控平台
     14.sys-hystrix-monitor: 服务断路监控仪表，仅供学习使用（已集成到sys-boot-admin）
-    15.sys-log-trace: 日志追踪，仅供学习使用(只用sleuth，放弃zipkin,将使用其他日志监控平台)
+    15.sys-log-trace: 日志追踪，仅供学习使用(只用sleuth，放弃zipkin,可选择使用其他日志监控平台)
    
     
 使用方法： 
 
     1.启动顺序，eureka > config-server > 各应用
-    2.各module包含使用说明，请仔细了解
+    2.各module包含使用说明，可详细了解
     3.Swagger地址：各项目域名端口+/swagger-ui.html
     
     
